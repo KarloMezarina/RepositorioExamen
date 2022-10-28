@@ -7,6 +7,8 @@ public class shoot : MonoBehaviour
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
     public float bulletSpeed = 10;
+
+    public float bulletCount=30;
     // Start is called before the first frame update
     void Start()
     {
