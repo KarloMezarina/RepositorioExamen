@@ -5,21 +5,21 @@ using UnityEngine.AI;
 
 public class FollowEnemy : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public Transform player;
+    public Transform target;
+    public float speed=4f;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     public void OnCollisionEnter(Collision collision)
     {
-        
+        Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        rb.MovePosition(pos);
+        transform.LookAt(target);
     }
-    void Update()
-    {
-        agent.SetDestination(player.position);
-    }
+    
 }
