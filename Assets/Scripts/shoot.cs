@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class shoot : MonoBehaviour
 {
-    public GameObject BulletInit;
-    public GameObject BulletPre;
-    public float VelocityBullet;
+    public Transform BulletSpawnPoint;
+    public GameObject BulletPrefab;
+    public float bulletSpeed = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +16,10 @@ public class shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire"))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            GameObject bulletTemp = Instantiate(BulletPre, BulletInit.transform.position, BulletInit.transform.rotation) as GameObject;
-            Rigidbody rb = bulletTemp.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * VelocityBullet);
-            Destroy(bulletTemp, 0.5f);
+            var bullet = Instantiate(BulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
+            bullet.GetComponent<Rigidbody>().velocity = BulletSpawnPoint.forward * bulletSpeed;
         }
     }
 }
