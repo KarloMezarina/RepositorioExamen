@@ -6,9 +6,11 @@ public class shoot : MonoBehaviour
 {
     public Transform BulletSpawnPoint;
     public GameObject BulletPrefab;
-    public float bulletSpeed = 10;
+    public float bulletSpeed = 60;
 
-    public float bulletCount=30;
+    public float bulletAmount;
+    public float bulletAmountTotal=30;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,18 @@ public class shoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            var bullet = Instantiate(BulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = BulletSpawnPoint.forward * bulletSpeed;
+            if (bulletAmount > 0)
+            {
+                var bullet = Instantiate(BulletPrefab, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
+                bullet.GetComponent<Rigidbody>().velocity = BulletSpawnPoint.forward * bulletSpeed;
+                Destroy(bullet, 3f);
+                bulletAmount -=1;
+            }          
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            bulletAmount += bulletAmountTotal;
+            bulletAmountTotal = 0;
         }
     }
 }
