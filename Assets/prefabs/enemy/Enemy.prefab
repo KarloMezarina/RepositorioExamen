@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killObj: {fileID: 0}
-  killsplus: 0
+  killsplus: 1
 --- !u!195 &2455268025045384776
 NavMeshAgent:
   m_ObjectHideFlags: 0
