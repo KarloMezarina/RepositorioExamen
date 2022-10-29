@@ -802,6 +802,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3545582405235426626, guid: 84a5fb0c004381942b1c135ddc2b639f, type: 3}
+      propertyPath: m_text
+      value: 'Kill Count: 0  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545582405235426626, guid: 84a5fb0c004381942b1c135ddc2b639f, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545582405235426626, guid: 84a5fb0c004381942b1c135ddc2b639f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545582405235426627, guid: 84a5fb0c004381942b1c135ddc2b639f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 183.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545582405235426627, guid: 84a5fb0c004381942b1c135ddc2b639f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 85.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3545582407189500416, guid: 84a5fb0c004381942b1c135ddc2b639f, type: 3}
       propertyPath: m_Name
       value: KillCountUI
