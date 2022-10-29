@@ -5,15 +5,15 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.collider.CompareTag("Bullet"))
-		{
+        if (other.tag == "bullet")
+        {
             Destroy();
 		}
-        
-        if(collision.collider.CompareTag("Enemy"))
-		{
+
+        if (other.tag == "Enemy")
+        {
             Destroy();
 		}
     }
